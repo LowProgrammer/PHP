@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<taglib>
+		<name>webname</name>
+		<value>你猜猜</value>
+	</taglib>
+
+	<taglib>
+		<name>菲菲</name>
+		<value>哈哈哈哈</value>
+	</taglib>
+	
+	<taglib>
+		<name>pagesize</name>
+		<value>100</value>
+	</taglib>
+</root>

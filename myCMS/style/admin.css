@@ -1,0 +1,180 @@
+@CHARSET "UTF-8";
+body,h1,h2,h3,p,form,ul,ol,li,dl,dt,dd{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background: #fff;
+	font-size: 12px;
+}
+ul,ol{
+	list-style: none;
+}
+#top{
+	background: url(../images/admin_top_bg.gif);
+}
+#top h1{
+	width: 150px;
+	height: 80px;
+	font-size: 12px;
+	background: url(../images/logosmall.png) no-repeat;
+	text-indent: -9999px;
+	float: left;
+}
+#top ul{
+	padding: 47px 0 0 10px;
+	float: left;
+}
+#top ul li{
+	float: left;
+	padding: 0 0 0 5px;
+}
+#top ul li a{
+	display: block;
+	width: 58px;
+	height: 33px; 
+	font-size: 14px;
+	line-height: 33px;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	background: url(../images/li_bg.png) no-repeat left bottom;
+	color: #fff;
+}
+#top ul li a.selected{
+	background-position: right bottom;
+	color: #3b6ea5;
+}
+#top p{
+	padding: 33px 20px 0 0;
+	color: #fff;
+	float: right;
+}
+#top p a{
+	color: #fff;
+	text-decoration: none;
+}
+#top p a:hover{
+	text-decoration: underline;
+}
+#sidebar{
+	background: #f7fbfc url(../images/sidebar_right.png) repeat-y right;
+}
+#sidebar dl{
+	padding: 20px;
+}
+#sidebar dl dt{
+	font-size: 14px;
+	color: #3b6ea5;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+	padding: 5px 0;
+	margin: 5px 0;
+}
+#sidebar dl dd{
+	height: 22px;
+	line-height: 22px;
+}
+#sidebar dl dd a{
+	color: #333;
+	text-decoration: none;
+}
+#sidebar dl dd a:hover{
+	text-decoration: underline;
+}
+#main{
+	background: white;
+}
+#main div.map{
+	padding: 15px;
+	color: #333;
+}
+#main div.map strong{
+	color: green;
+}
+#main table{
+	width: 95%;
+	margin: 0 auto;
+	text-align: center;
+}
+#main table.left{
+	text-align: left;
+}
+#main table tr{
+	background: #fff;
+}
+#main table tr:hover{
+	background: #ffffcc;
+}
+#main table tr th,#main table tr td{
+	height: 30px;
+	line-height: 30px;
+	color: #333;
+}
+#main table tr th{
+	background: #eef3f7;
+	border-bottom: 1px solid #d5dfe8;
+	font-weight: bold;
+}
+#main table tr td{
+	border-bottom:1px solid #eee;
+}
+#main a{
+	color: #3b6ea5;
+	text-decoration: none;
+}
+#main a:hover{
+	text-decoration: none;
+}
+#main p.center{
+	padding: 20px;
+	text-align: center;
+}
+#main form input.text{
+	width: 220px;
+	height: 19px;
+	background: #fff;
+	border: 1px solid #ccc;
+}
+#main form select{
+	width: 100px;
+	height: 19px;
+	background: #fff;
+}
+#main form textarea{
+	font-size: 13px;
+	width: 220px;
+	height: 100px;
+	background: #fff;
+	border: 1px solid #ccc;
+	margin: 0 0 0 60px;
+}
+
+#main form input.submit{
+	cursor: pointer;
+	margin: 0 0 0 60px;
+}
+#main form input.level{
+	margin: 0 0 0 60px;
+}
+#main ol{
+	padding: 0 0 0px 28px;
+	height: 30px;
+}
+#main ol li{
+	
+	float: left;
+	padding: 0 10px 0 0;
+}
+#main ol li a{
+	text-decoration: none;
+	display: block;
+	padding: 6px;
+}
+#main ol li a:hover{
+	background: #eee;
+}
+#main ol li a.selected{
+	background: #3b6ea5;
+	color: #fff;
+}

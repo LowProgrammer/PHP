@@ -1,0 +1,5 @@
+@CHARSET "utf-8";
+h3,div.start,div.reg,div.login{
+	margin: 20px;
+	text-align: center;
+}
