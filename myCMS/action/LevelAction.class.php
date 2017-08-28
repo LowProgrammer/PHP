@@ -29,7 +29,7 @@ class LevelAction extends Action
 					$this->update();
 					break;
 				case 'delete':
-					$this->delete();
+					$this->deleteLevel();
 					break;
 				default:
 					Tool::alertBack('非法操作！');	
@@ -49,6 +49,7 @@ class LevelAction extends Action
             if(Validate::checkLength($_POST['level_name'],20,'max')) Tool::alertBack('等级名称不得大于二十位');
             if(Validate::checkLength($_POST['level_info'],200,'max')) Tool::alertBack('等级描述不得大于二十位');
 			$this->_model->_level_name=$_POST['level_name'];
+			if($this->_model->getOneLevel())Tool::alertBack('该等级名称已存在');
 			$this->_model->_level_info=$_POST['level_info'];
 			$this->_model->addLevel()?Tool::alertLocation('恭喜你，新增等级成功！','level.php?action=show'):Tool::alertBack('很遗憾，新增等级失败！');
 		}
@@ -85,6 +86,9 @@ class LevelAction extends Action
 	public function deleteLevel(){
 		if(isset($_GET['id'])){
 			$this->_model->_id=$_GET['id'];
+			$_manage=new ManageModel();
+			$_manage->_level=$this->_model->_id;
+			if($_manage->getOneManage())Tool::alertBack('此等级已存在用户，无法删除，请先删除用户');
 			$this->_model->deleteLevel()?Tool::alertLocation('恭喜你，等级删除成功','level.php?action=show'):alertBack('很遗憾，等级删除失败');
 		}
 		else{

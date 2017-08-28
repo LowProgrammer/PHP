@@ -5,7 +5,7 @@
     <title>main</title>
     <link rel="stylesheet" type="text/css" href="../style/admin.css">
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../js/admin_manage.js"></script>
+    <script type="text/javascript" src="../js/admin_level.js"></script>
 </head>
 <body id="main">
 	<div class="map">
@@ -15,7 +15,7 @@
 		<li><a href="level.php?action=add" class="mes selected">新增等级</a></li>
 		<li><a href="level.php?action=show" class="mes" >等级列表</a></li>
 		<?php if($this->_vars['update']){ ?>
-			<li><a href="level.php?action=update" class="mes" >修改等级</a></li>
+			<li><a href="level.php?action=update&id=<?php echo $this->_vars['id'];?>" class="mes" >修改等级</a></li>
 		<?php }?>
 	</ol>
 	<?php if($this->_vars['show']){ ?>
@@ -36,11 +36,11 @@
 	<?php }?>
 	<!--新增页面  -->
 	<?php if($this->_vars['add']){ ?>
-		<form method="post">
+		<form method="post" name="add">
 			<table class="left">
-				<tr><td>等级名称：<input type="text" name="level_name" class="text"></td></tr>
-				<tr><td>等级描述：<textarea name="level_info"></textarea></td></tr>
-				<tr><td><input type="submit" name="send" value="新增等级" class="submit level">[<a href="level.php?action=show">返回列表</a>]</td></tr>
+				<tr><td>等级名称：<input type="text" name="level_name" class="text">(*等级名称不得小于两位，不得大于二十位)</td></tr>
+				<tr><td>等级描述：<textarea name="level_info"></textarea>(*描述不得大于200位)</td></tr>
+				<tr><td><input type="submit" name="send" value="新增等级" onclick="return checkAdd()" class="submit level">[<a href="level.php?action=show">返回列表</a>]</td></tr>
 			</table>
 		</form>
 
@@ -50,12 +50,12 @@
 	<?php if($this->_vars['update']){ ?>
 		
 		
-		<form method="post">
+		<form method="post" name="update">
 			<input type="hidden" name="id" value="<?php echo $this->_vars['id'];?>" >
 			<table class="left">
 				<tr><td>等级名称：<input type="text" name="level_name" value="<?php echo $this->_vars['level_name'];?>" class="text"></td></tr>
 				<tr><td>等级描述：<textarea name="level_info" value="<?php echo $this->_vars['level_info'];?>"></textarea></td></tr>
-				<tr><td><input type="submit" name="send" value="修改等级" class="submit level">[<a href="level.php?action=show">返回列表</a>]</td></tr>
+				<tr><td><input type="submit" name="send" value="修改等级" onclick="return checkUpdateForm()" class="submit level">[<a href="level.php?action=show">返回列表</a>]</td></tr>
 			</table>
 		</form>
 	<?php }?>

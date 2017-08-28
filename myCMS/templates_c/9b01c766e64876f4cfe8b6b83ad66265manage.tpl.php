@@ -61,7 +61,7 @@
 	<!--修改页面 -->
 	<?php if($this->_vars['update']){ ?>
 		
-		<form method="post">
+		<form method="post" name="update">
 			<input type="hidden" name="id" value="<?php echo $this->_vars['id'];?>" >
 			<input type="hidden" value="<?php echo $this->_vars['level'];?>" id="level">
 			<input type="hidden" value="<?php echo $this->_vars['admin_pass'];?>" name="pass">
@@ -75,7 +75,7 @@
 								</select>
 					</td>
 				</tr>
-				<tr><td><input type="submit" name="send" value="修改管理员" class="submit">[<a href="manage.php?action=show">返回列表</a>]</td></tr>
+				<tr><td><input type="submit" name="send" value="修改管理员" onclick="return checkUpdateForm()" class="submit">[<a href="manage.php?action=show">返回列表</a>]</td></tr>
 			</table>
 		</form>
 	<?php }?>

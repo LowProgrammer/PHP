@@ -50,7 +50,9 @@ class ManageAction extends Action
             if(Validate::checkNull($_POST['admin_pass'])) Tool::alertBack('密码不能为空');
             if(Validate::checkLength($_POST['admin_pass'],6,'min')) Tool::alertBack('密码不得小于六位');
             if(Validate::checkEquals($_POST['admin_pass'],$_POST['admin_notpass'])) Tool::alertBack('密码确认必须一致');
-			$this->_model->_admin_user=$_POST['admin_user'];
+
+            $this->_model->_admin_user=$_POST['admin_user'];
+            if($this->_model->getOneManage()) Tool::alertBack('该用户已存在');
 			$this->_model->_admin_pass=sha1($_POST['admin_pass']);
 			$this->_model->_level=$_POST['level'];
 			$this->_model->addManage()?Tool::alertLocation('恭喜你，新增用户成功！','manage.php?action=show'):Tool::alertBack('很遗憾，新增用户失败！');

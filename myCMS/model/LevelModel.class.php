@@ -25,6 +25,8 @@
 						cms_level 
 					WHERE 
 						id='$this->_id' 
+					OR  
+					    level_name='$this->_level_name'
 					LIMIT 1";
 			return parent::one($_sql);
 		}

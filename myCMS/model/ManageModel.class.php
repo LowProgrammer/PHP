@@ -37,6 +37,10 @@
 						cms_manage 
 					WHERE 
 						id='$this->_id' 
+					OR
+					    admin_user='$this->_admin_user'
+					OR 
+					    level='$this->_level'
 					LIMIT 1";
 			return parent::one($_sql);
 		}
