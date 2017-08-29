@@ -1,6 +1,15 @@
 <?php 
 	//模型基类
 	class Model{
+	    //查找总记录模型
+        protected  function total($_sql){
+            $_db=DB::getDB();
+            $_result=$_db->query($_sql);
+            $total=$_result->fetch_row();
+            //$total=$_result->num_rows;
+            DB::unDB($_result,$_db);
+            return $total[0];
+        }
 		//查找单个数据
 		protected function one($_sql){
 			$_db=DB::getDB();

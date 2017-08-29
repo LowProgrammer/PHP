@@ -4,6 +4,7 @@
 */
 class ManageAction extends Action
 {
+
 	// private $_tpl;
 	// private $_model;
 	public function __construct(&$_tpl){
@@ -38,6 +39,8 @@ class ManageAction extends Action
 			
 	}
 	private function show(){
+	    $_page=new Page($this->_model->getManageTotal(),PAGE_SIZE);
+	    $this->_model->_limit=$_page->_limit;
 		$this->_tpl->assign('show',true);
 		$this->_tpl->assign('title',"管理员列表");
 		$this->_tpl->assign("AllManage",$this->_model->getAllManage());
@@ -59,7 +62,9 @@ class ManageAction extends Action
 		}
 		$this->_tpl->assign('add',true);
 		$this->_tpl->assign('title',"新增管理员");
-		$this->_tpl->assign('AllLevel',$this->_model->getAllLevel());
+		$_level=new LevelModel();
+		$this->_tpl->assign('AllLevel',$_level->getAllLevel());
+
 	}
 	private function update(){
 		if(isset($_POST['send'])){
@@ -85,7 +90,8 @@ class ManageAction extends Action
             $this->_tpl->assign('admin_pass',$this->_model->getOneManage()->admin_pass);
 			$this->_tpl->assign('update',true);
 			$this->_tpl->assign('title',"修改管理员");
-			$this->_tpl->assign('AllLevel',$this->_model->getAllLevel());
+            $_level=new LevelModel();
+            $this->_tpl->assign('AllLevel',$_level->getAllLevel());
 		}else{
 			Tool::alertBack('非法操作！');
 		}

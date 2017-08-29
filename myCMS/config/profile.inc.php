@@ -4,6 +4,9 @@
 	define("DB_USER", "root");
 	define("DB_PASS", "root");
 	define("DB_NAME", "ff_cms");
+
+
+	define('PAGE_SIZE',10);//每页
 	//模板配置信息
 	define('TPL_DIR', ROOT_PATH.'/templates/');//模板目录
 
