@@ -24,7 +24,7 @@ class ValidateCode{
     }
 
     //生成随机码
-    private function crete(){
+    private function createCode(){
         $_len=strlen($this->_charset)-1;
         for($i=0;$i<$this->_codelen;$i++){
             $this->_code.=$this->_charset[mt_rand(0,$_len)];
@@ -75,7 +75,7 @@ class ValidateCode{
 
     }
     public function getCode(){
-        $this->createCode();
+        //$this->createCode();
         return strtolower($this->_code);
     }
 }

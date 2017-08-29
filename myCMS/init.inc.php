@@ -1,4 +1,6 @@
-<?php  
+<?php
+    //开启session
+    session_start();
 	//设置编码
 	header("Content-type:text/html;charset=utf-8");
 	//设置网站根目录
