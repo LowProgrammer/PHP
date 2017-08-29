@@ -36,7 +36,7 @@
 		<?php }?>
 	</table>
 		<div id="page"><?php echo $this->_vars['page'];?></div>
-	{*<p class="center">[<a href="manage.php?action=add">新增管理员</a>]</p>*}
+	<!--<p class="center">[<a href="manage.php?action=add">新增管理员</a>]</p>-->
 	<?php }?>
 	<!--新增页面  -->
 	<?php if($this->_vars['add']){ ?>
