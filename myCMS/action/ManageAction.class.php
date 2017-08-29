@@ -44,6 +44,7 @@ class ManageAction extends Action
 		$this->_tpl->assign('show',true);
 		$this->_tpl->assign('title',"管理员列表");
 		$this->_tpl->assign("AllManage",$this->_model->getAllManage());
+        $this->_tpl->assign('page',$_page->showPage());
 	}
 	private function add(){
 		if(isset($_POST['send'])){
