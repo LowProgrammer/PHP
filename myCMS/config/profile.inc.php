@@ -6,7 +6,7 @@
 	define("DB_NAME", "ff_cms");
 
 
-	define('PAGE_SIZE',2);//每页
+	define('PAGE_SIZE',1);//每页
 	//模板配置信息
 	define('TPL_DIR', ROOT_PATH.'/templates/');//模板目录
 
