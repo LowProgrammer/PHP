@@ -17,7 +17,7 @@
 		<li><a href="###" id="nav4" target="sidebar" onclick="admin_top_nav(4)">系统</a></li>	
 	</ul>
 	<p>
-		您好，admin [ 超级管理员 ][ <a href="../" target="_blank">去首页</a> ] [ 退出 ]
+		您好，<?php echo $this->_vars['admin_user'];?> [ <?php echo $this->_vars['level_name'];?> ][ <a href="../" target="_blank">去首页</a> ] [<a href="manage.php?action=logout" target="_parent">退出</a> ]
 	</p>
 </body>
 </html>

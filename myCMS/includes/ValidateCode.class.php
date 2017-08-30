@@ -7,7 +7,7 @@
  */
 //验证码类
 class ValidateCode{
-    private $_charset="abcdefghkmnoprstuvwxyzABCDEFGHKMNPRSTUVWXYZ23456789";//随机因子
+    private $_charset="abcdefghkmnprstuvwxyzABCDEFGHKMNPRSTUVWXYZ23456789";//随机因子
     private $_code;
     private $_codelen=4;
     private $_width=130;        //验证码宽度

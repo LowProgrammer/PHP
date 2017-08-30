@@ -18,7 +18,7 @@
 			//打印出第一组数据
 			$_objects=$_result->fetch_object();
 			DB::unDB($_result,$_db);
-			return $_objects;
+			return Tool::htmlString($_objects);
 		}
 		//查找多个数据模型
 		protected function all($_sql){
@@ -32,7 +32,7 @@
 				$_html[]=$_objects;
 			}
 			DB::unDB($_result,$_db);
-			return $_html;
+			return Tool::htmlString($_html);
 		}
 
 		//CURD操作

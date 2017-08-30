@@ -12,6 +12,9 @@
 		    }elseif($_falg=='max'){
                 if(mb_strlen(trim($_date),'utf-8')>$_length)return true;
                 return false;
+            }elseif ($_falg='equals'){
+                if(mb_strlen(trim($_date,'utf-8'))!=$_length) return true;
+                return false;
             }else{
 		        Tool::_alertBack('ERROR:参数传递错误，必须是min或max');
             }
@@ -21,5 +24,10 @@
 			if(trim($_date)!=trim($_otherdate))return true;
 			return false;
 		}
+		static public function checkSession(){
+		    if(!isset($_SESSION['admin'])) Tool::alertBack('非法登录');
+
+
+        }
 	}
 ?>

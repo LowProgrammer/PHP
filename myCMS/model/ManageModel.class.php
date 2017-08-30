@@ -10,7 +10,7 @@
 
 		//拦截器
 		public function __set($_key,$_value){
-			$this->$_key=$_value;
+			$this->$_key=Tool::mysqlSttring($_value);
 		}
 		public function __get($_key){
 			return $this->$_key;
@@ -21,6 +21,23 @@
 
 		    $_sql="SELECT COUNT(*) FROM cms_manage";
 		   return parent::total($_sql);
+        }
+        //查询登录管理员
+        public  function  getLoginManage(){
+            $_sql="SELECT 
+						m.admin_user,
+						l.level_name
+					FROM 
+						cms_manage m,
+						cms_level l
+					WHERE 
+						m.admin_user='$this->_admin_user'
+					AND 
+					    m.admin_pass='$this->_admin_pass'
+					AND 
+					    m.level=l.id
+					LIMIT 1";
+            return parent::one($_sql);
         }
 		//查询单个管理员
 		public function getOneManage(){
@@ -38,7 +55,8 @@
 					    admin_user='$this->_admin_user'
 					OR 
 					    level='$this->_level'
-					LIMIT 1";
+					LIMIT 
+					1";
 			return parent::one($_sql);
 		}
 		//查询所有管理员
