@@ -25,7 +25,7 @@
 		</tr>
 		{foreach $AllManage(key,value)}
 		<tr>
-			<td>{@value->id}</td>
+			<td><script type="text/javascript">document.write({@key+1}+{$num});</script></td>
 			<td>{@value->admin_user}</td>
 			<td>{@value->level_name}</td>
 			<td>{@value->login_count}</td>
@@ -53,7 +53,7 @@
 								</select>
 					</td>
 				</tr>
-				<tr><td><input type="submit" name="send" value="新增管理员" onclick="return checkAdd()" class="submit">[<a href="manage.php?action=show">返回列表</a>]</td></tr>
+				<tr><td><input type="submit" name="send" value="新增管理员" onclick="return checkAdd()" class="submit">[<a href="{$prev}">返回列表</a>]</td></tr>
 			</table>
 		</form>
 
@@ -66,6 +66,7 @@
 			<input type="hidden" name="id" value="{$id}" >
 			<input type="hidden" value="{$level}" id="level">
 			<input type="hidden" value="{$admin_pass}" name="pass">
+			<input type="hidden" value="{$prev}" name="prev_url">
 			<table class="left">
 				<tr><td>用户名：<input type="text" name="admin_user" class="text" value="{$admin_user}" readonly="true"></td></tr>
 				<tr><td>密 &nbsp; &nbsp;码：<input type="password" name="admin_pass" class="text">(*留空则不修改)</td></tr>
@@ -76,7 +77,7 @@
 								</select>
 					</td>
 				</tr>
-				<tr><td><input type="submit" name="send" value="修改管理员" onclick="return checkUpdateForm()" class="submit">[<a href="manage.php?action=show">返回列表</a>]</td></tr>
+				<tr><td><input type="submit" name="send" value="修改管理员" onclick="return checkUpdateForm()" class="submit">[<a href="{$prev}">返回列表</a>]</td></tr>
 			</table>
 		</form>
 	{/if}

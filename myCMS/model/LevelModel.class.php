@@ -5,6 +5,7 @@
 		private $_level_name;
 		private $_level_info;
 		private $_id;
+        private $_limit;
 
 		//拦截器
 		public function __set($_key,$_value){
@@ -13,7 +14,12 @@
 		public function __get($_key){
 			return $this->$_key;
 		}
-		
+        //获取等级总记录
+        public function  getLevelTotal(){
+
+            $_sql="SELECT COUNT(*) FROM cms_level";
+            return parent::total($_sql);
+        }
 		//查询单个管理员
 		public function getOneLevel(){
 			
@@ -30,7 +36,7 @@
 					LIMIT 1";
 			return parent::one($_sql);
 		}
-		//查询所有管理员
+		//查询所有等级，不带LIMIT
 		public function getAllLevel(){
 			
 			//sql语句
@@ -42,14 +48,27 @@
 						cms_level 
 					
 					ORDER BY
-						id ASC
-					limit
-						0,20
+						id DESC 
 					";
 			return parent::all($_sql);
 		}	
-
-		//新增管理员
+        //查询所有等级，待Limit
+        public function getAllLimitLevel(){
+            //sql语句
+            $_sql="SELECT 
+						id,
+						level_name,
+						level_info 
+					FROM 
+						cms_level 
+					
+					ORDER BY
+						id DESC 
+					$this->_limit
+					";
+            return parent::all($_sql);
+        }
+        //新增管理员
 		public function addLevel(){
 			
 			

@@ -7,6 +7,7 @@
 		private $_level;
 		private $_id;
         private $_limit;
+        private $_last_ip;
 
 		//拦截器
 		public function __set($_key,$_value){
@@ -15,7 +16,19 @@
 		public function __get($_key){
 			return $this->$_key;
 		}
-		//
+		//设置管理员登录统计次数。ip。时间
+        public function setLoginCount(){
+		    $_sql="UPDATE 
+                      cms_manage 
+                  SET 
+                      login_count=login_count+1,
+                       last_ip='$this->_last_ip',
+                       last_time=NOW()
+                  WHERE 
+                      admin_user='$this->_admin_user' 
+                  LIMIT 1";
+            return parent::aud($_sql);
+        }
         //获取管理员总记录
         public function  getManageTotal(){
 
@@ -76,7 +89,7 @@
 					WHERE 
 						l.id=m.level
 					ORDER BY
-						m.id ASC
+						m.id DESC 
 					$this->_limit
 					";
 			return parent::all($_sql);

@@ -24,11 +24,11 @@ class Tool{
         $_string=null;
         if(is_array($_date)){
             foreach ($_date as $_key=>$_value){
-                $_string[$_key]=self::htmlString($_value);
+                $_string[$_key]=Tool::htmlString($_value);
             }
         }elseif (is_object($_date)){
             foreach ($_date as $_key=>$_value){
-                $_string->$_key=self::htmlString($_value);
+                @$_string->$_key=Tool::htmlString($_value);
             }
         }else{
             $_string=htmlspecialchars($_date);

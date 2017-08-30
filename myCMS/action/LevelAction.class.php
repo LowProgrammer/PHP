@@ -39,9 +39,10 @@ class LevelAction extends Action
 			
 	}
 	private function show(){
+	    parent::page($this->_model->getLevelTotal());
 		$this->_tpl->assign('show',true);
 		$this->_tpl->assign('title',"等级列表");
-		$this->_tpl->assign("AllLevel",$this->_model->getAllLevel());
+		$this->_tpl->assign("AllLevel",$this->_model->getAllLimitLevel());
 	}
 	private function add(){
 		if(isset($_POST['send'])){
@@ -54,6 +55,7 @@ class LevelAction extends Action
 			$this->_model->_level_info=$_POST['level_info'];
 			$this->_model->addLevel()?Tool::alertLocation('恭喜你，新增等级成功！','level.php?action=show'):Tool::alertBack('很遗憾，新增等级失败！');
 		}
+        $this->_tpl->assign('prev',PREV_URL);
 		$this->_tpl->assign('add',true);
 		$this->_tpl->assign('title',"新增等级");
 	}
@@ -67,7 +69,7 @@ class LevelAction extends Action
 			$this->_model->_level_name=$_POST['level_name'];
 			$this->_model->_level_info=$_POST['level_info'];
 						//echo $this->_id;
-			$this->_model->updateLevel()?Tool::alertLocation('恭喜你，修改等级成功','level.php?action=show'):Tool::alertBack('很遗憾修改失败');
+			$this->_model->updateLevel()?Tool::alertLocation('恭喜你，修改等级成功',$_POST['prev_url']):Tool::alertBack('很遗憾修改失败');
 		}
 		if(isset($_GET['id'])){
 			$this->_model->_id=$_GET['id'];
@@ -75,6 +77,7 @@ class LevelAction extends Action
 			$this->_tpl->assign('id',$this->_model->getOneLevel()->id);
 			$this->_tpl->assign('level_name',$this->_model->getOneLevel()->level_name);
 			$this->_tpl->assign('level_info',$this->_model->getOneLevel()->level_info);
+			$this->_tpl->assign('prev',PREV_URL);
 			$this->_tpl->assign('update',true);
 			$this->_tpl->assign('title',"修改等级");
 			

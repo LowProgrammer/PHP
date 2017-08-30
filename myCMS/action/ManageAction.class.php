@@ -59,10 +59,12 @@ class ManageAction extends Action
             if(Validate::checkLength($_POST['admin_pass'],6,'min')) Tool::alertBack('密码不得小于六位');
             $this->_model->_admin_user=$_POST['admin_user'];
             $this->_model->_admin_pass=sha1($_POST['admin_pass']);
+            $this->_model->_last_ip=$_SERVER['REMOTE_ADDR'];
             $_login=$this->_model->getLoginManage();
             if($_login){
                 $_SESSION['admin']['admin_user']=$_login->admin_user;
                 $_SESSION['admin']['level_name']=$_login->level_name;
+                $this->_model->setLoginCount();
                 Tool::alertLocation(null,'admin.php');
             }else{
                 Tool::alertBack('用户密码或账号错误');
@@ -76,12 +78,11 @@ class ManageAction extends Action
         Tool::alertLocation(null,'admin_login.php');
     }
 	private function show(){
-	    $_page=new Page($this->_model->getManageTotal(),PAGE_SIZE);
-	    $this->_model->_limit=$_page->_limit;
+        parent::page($this->_model->getManageTotal());
 		$this->_tpl->assign('show',true);
 		$this->_tpl->assign('title',"管理员列表");
 		$this->_tpl->assign("AllManage",$this->_model->getAllManage());
-        $this->_tpl->assign('page',$_page->showPage());
+
 	}
 	private function add(){
 		if(isset($_POST['send'])){
@@ -100,6 +101,7 @@ class ManageAction extends Action
 		}
 		$this->_tpl->assign('add',true);
 		$this->_tpl->assign('title',"新增管理员");
+        $this->_tpl->assign('prev',PREV_URL);
 		$_level=new LevelModel();
 		$this->_tpl->assign('AllLevel',$_level->getAllLevel());
 
@@ -117,7 +119,7 @@ class ManageAction extends Action
 
 			$this->_model->_level=$_POST['level'];
 						//echo $this->_id;
-			$this->_model->updateManage()?Tool::alertLocation('恭喜你，修改管理员成功','manage.php?action=show'):Tool::alertBack('很遗憾修改失败');
+			$this->_model->updateManage()?Tool::alertLocation('恭喜你，修改管理员成功',$_POST['prev_url']):Tool::alertBack('很遗憾修改失败');
 		}
 		if(isset($_GET['id'])){
 			$this->_model->_id=$_GET['id'];
@@ -128,6 +130,7 @@ class ManageAction extends Action
             $this->_tpl->assign('admin_pass',$this->_model->getOneManage()->admin_pass);
 			$this->_tpl->assign('update',true);
 			$this->_tpl->assign('title',"修改管理员");
+			$this->_tpl->assign('prev',PREV_URL);
             $_level=new LevelModel();
             $this->_tpl->assign('AllLevel',$_level->getAllLevel());
 		}else{
@@ -139,7 +142,7 @@ class ManageAction extends Action
 	public function delete(){
 		if(isset($_GET['id'])){
 			$this->_model->_id=$_GET['id'];
-			$this->_model->deleteManage()?Tool::alertLocation('恭喜你，管理员删除成功','manage.php?action=show'):alertBack('很遗憾，管理员删除失败');
+			$this->_model->deleteManage()?Tool::alertLocation('恭喜你，管理员删除成功',PREV_URL):alertBack('很遗憾，管理员删除失败');
 		}
 		else{
 			Tool::alertBack('非法操作');

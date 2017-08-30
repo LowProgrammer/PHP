@@ -25,14 +25,15 @@
 		</tr>
 		<?php  foreach($this->_vars['AllLevel'] as $key =>$value){?>
 		<tr>
-			<td><?php echo $value->id;?></td>
+			<td><script type="text/javascript">document.write(<?php echo $key+1;?>+<?php echo $this->_vars['num'];?>);</script></td>
 			<td><?php echo $value->level_name;?></td>
 			<td><?php echo $value->level_info;?></td>
 			<td><a href="level.php?action=update&id=<?php echo $value->id;?>">修改</a> | <a href="level.php?action=delete&id=<?php echo $value->id;?>" onclick="return confirm('你真的要删除这个等级吗？')?true:false">删除</a></td>
 		</tr>
 		<?php }?>
 	</table>
-	<p class="center">[<a href="level.php?action=add">新增管理员</a>]</p>
+
+	<div id="page"><?php echo $this->_vars['page'];?></div>
 	<?php }?>
 	<!--新增页面  -->
 	<?php if($this->_vars['add']){ ?>
@@ -40,7 +41,7 @@
 			<table class="left">
 				<tr><td>等级名称：<input type="text" name="level_name" class="text">(*等级名称不得小于两位，不得大于二十位)</td></tr>
 				<tr><td>等级描述：<textarea name="level_info"></textarea>(*描述不得大于200位)</td></tr>
-				<tr><td><input type="submit" name="send" value="新增等级" onclick="return checkAdd()" class="submit level">[<a href="level.php?action=show">返回列表</a>]</td></tr>
+				<tr><td><input type="submit" name="send" value="新增等级" onclick="return checkAdd()" class="submit level">[<a href="<?php echo $this->_vars['prev'];?>">返回列表</a>]</td></tr>
 			</table>
 		</form>
 
@@ -52,10 +53,11 @@
 		
 		<form method="post" name="update">
 			<input type="hidden" name="id" value="<?php echo $this->_vars['id'];?>" >
+			<input type="hidden" name="prev_url" value="<?php echo $this->_vars['prev'];?>" >
 			<table class="left">
 				<tr><td>等级名称：<input type="text" name="level_name" value="<?php echo $this->_vars['level_name'];?>" class="text"></td></tr>
 				<tr><td>等级描述：<textarea name="level_info" value="<?php echo $this->_vars['level_info'];?>"></textarea></td></tr>
-				<tr><td><input type="submit" name="send" value="修改等级" onclick="return checkUpdateForm()" class="submit level">[<a href="level.php?action=show">返回列表</a>]</td></tr>
+				<tr><td><input type="submit" name="send" value="修改等级" onclick="return checkUpdateForm()" class="submit level">[<a href="<?php echo $this->_vars['prev'];?>">返回列表</a>]</td></tr>
 			</table>
 		</form>
 	<?php }?>

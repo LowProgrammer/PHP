@@ -7,7 +7,8 @@
 
     //系统配置文件
     define('GPC',get_magic_quotes_gpc());//sql转义功能是否打开
-	define('PAGE_SIZE',10);//每页
+	define('PAGE_SIZE',2);//每页
+    define('PREV_URL',$_SERVER['HTTP_REFERER']);//上一页地址
 	//模板配置信息
 	define('TPL_DIR', ROOT_PATH.'/templates/');//模板目录
 
