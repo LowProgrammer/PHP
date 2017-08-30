@@ -7,6 +7,7 @@ class LevelAction extends Action
 	// private $_tpl;
 	// private $_model;
 	public function __construct(&$_tpl){
+        Validate::checkSession();//判断是否非法登录
 		parent::__construct($_tpl,new LevelModel());
 		$this->_action();
 		$this->_tpl->display('level.tpl');
