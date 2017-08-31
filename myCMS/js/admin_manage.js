@@ -40,9 +40,9 @@ function checkAdd() {
 //验证update
 function checkUpdateForm() {
     var input=$("form[name='update'] input");
-    if(input.eq(1).val()==''||input.eq(0).val().length<6){
+    if(input.eq(5).val()==''||input.eq(5).val().length<6){
         alert('警告：密码不得为空并且不得小于六位');
-        input.eq(1).focus();
+        input.eq(5).focus();
         return false;
     }
     return true;
