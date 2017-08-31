@@ -5,8 +5,9 @@ require substr(dirname(__FILE__), 0,-6).'/init.inc.php';
 global $_tpl;
 
 //入口
-new ManageAction($_tpl);
-
+$_manage=new ManageAction($_tpl);
+$_manage->_action();
+$this->_tpl->display('manage.tpl');
 
 
 

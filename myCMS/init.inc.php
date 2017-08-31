@@ -26,9 +26,9 @@
 			require ROOT_PATH.'/includes/'.$_className.'.class.php';
 		}
 	}
-	//缓存机制
-	require 'cache.inc.php';
+
 	//实力化模板类
 	$_tpl=new Templates();
-
+    //初始化
+    require 'common.inc.php';
 ?>

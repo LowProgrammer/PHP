@@ -9,11 +9,10 @@ class ManageAction extends Action
 	// private $_model;
 	public function __construct(&$_tpl){
 		parent::__construct($_tpl,new ManageModel());
-		$this->_action();
-		$this->_tpl->display('manage.tpl');
+
 	}
 	//
-	private function _action(){
+	public function _action(){
 
 			$this->_tpl->assign('show',false);
 			$this->_tpl->assign('add',false);

@@ -7,13 +7,12 @@ class LevelAction extends Action
 	// private $_tpl;
 	// private $_model;
 	public function __construct(&$_tpl){
-        Validate::checkSession();//判断是否非法登录
+
 		parent::__construct($_tpl,new LevelModel());
-		$this->_action();
-		$this->_tpl->display('level.tpl');
+
 	}
 	//
-	private function _action(){
+	public function _action(){
 
 			$this->_tpl->assign('show',false);
 			$this->_tpl->assign('add',false);
@@ -44,6 +43,7 @@ class LevelAction extends Action
 		$this->_tpl->assign('title',"等级列表");
 		$this->_tpl->assign("AllLevel",$this->_model->getAllLimitLevel());
 	}
+
 	private function add(){
 		if(isset($_POST['send'])){
             if(Validate::checkNull($_POST['level_name'])) Tool::alertBack('等级名称不能为空');
