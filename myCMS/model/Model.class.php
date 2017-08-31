@@ -1,6 +1,12 @@
 <?php 
 	//模型基类
 	class Model{
+        //获取下一个增值ID
+        public function nextid($_table){
+            $_sql="SHOW TABLE STATUS LIKE '$_table'";
+            $_object=$this->one($_sql);
+            return $_object->Auto_increment;
+        }
 	    //查找总记录模型
         protected  function total($_sql){
             $_db=DB::getDB();

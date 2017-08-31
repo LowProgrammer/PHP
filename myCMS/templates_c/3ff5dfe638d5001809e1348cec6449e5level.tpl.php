@@ -12,8 +12,8 @@
 		管理首页&gt;&gt;等级管理&gt;&gt;<strong id="title"><?php echo $this->_vars['title'];?></strong>
 	</div>
 	<ol>
-		<li><a href="level.php?action=add" class="mes selected">新增等级</a></li>
-		<li><a href="level.php?action=show" class="mes" >等级列表</a></li>
+		<li><a href="level.php?action=add" class="mes ">新增等级</a></li>
+		<li><a href="level.php?action=show" class="mes selected" >等级列表</a></li>
 		<?php if($this->_vars['update']){ ?>
 			<li><a href="level.php?action=update&id=<?php echo $this->_vars['id'];?>" class="mes" >修改等级</a></li>
 		<?php }?>
@@ -23,6 +23,7 @@
 		<tr>
 			<th>编号</th><th>等级名称</th><th>描述</th><th>操作</th>
 		</tr>
+		<?php if($this->_vars['AllLevel']){ ?>
 		<?php  foreach($this->_vars['AllLevel'] as $key =>$value){?>
 		<tr>
 			<td><script type="text/javascript">document.write(<?php echo $key+1;?>+<?php echo $this->_vars['num'];?>);</script></td>
@@ -30,6 +31,9 @@
 			<td><?php echo $value->level_info;?></td>
 			<td><a href="level.php?action=update&id=<?php echo $value->id;?>">修改</a> | <a href="level.php?action=delete&id=<?php echo $value->id;?>" onclick="return confirm('你真的要删除这个等级吗？')?true:false">删除</a></td>
 		</tr>
+		<?php }?>
+			<?php }else{?>
+				<tr><td colspan="4">对不起没有任何数据</td></tr>
 		<?php }?>
 	</table>
 

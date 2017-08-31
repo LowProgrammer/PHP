@@ -1,10 +1,18 @@
 $(document).ready(function(){
 	var level=$('#level').val();
 	//alert(level);
-	if(level)
-		$('option').eq(level-1).attr('selected','selected');
-	//alert('12');
-	
+	if(level) {
+        $('option').eq(level - 1).attr('selected', 'selected');
+        //alert('12');
+    }
+    var title=$('#title').text();
+    var a=$('.mes');
+    a.removeClass('selected');
+    for (var i = 0; i < a.length; i++) {
+        if(a.eq(i).text()==title){
+            a.eq(i).addClass('selected');
+        }
+    }
 
 
 });

@@ -12,8 +12,8 @@
 		管理首页&gt;&gt;管理员管理&gt;&gt;<strong id="title"><?php echo $this->_vars['title'];?></strong>
 	</div>
 	<ol>
-		<li><a href="manage.php?action=add" class="mes selected">新增管理员</a></li>
-		<li><a href="manage.php?action=show" class="mes" >管理员列表</a></li>
+		<li><a href="manage.php?action=add" class="mes">新增管理员</a></li>
+		<li><a href="manage.php?action=show" class="mes selected" >管理员列表</a></li>
 		<?php if($this->_vars['update']){ ?>
 			<li><a href="manage.php?action=update&id=<?php echo $this->_vars['id'];?>" class="mes" >修改管理员</a></li>
 		<?php }?>
@@ -23,6 +23,7 @@
 		<tr>
 			<th>编号</th><th>用户名</th><th>等级</th><th>登录次数</th><th>最近登录IP</th><th>最近登陆时间</th><th>操作</th>
 		</tr>
+		<?php if($this->_vars['AllManage']){ ?>
 		<?php  foreach($this->_vars['AllManage'] as $key =>$value){?>
 		<tr>
 			<td><script type="text/javascript">document.write(<?php echo $key+1;?>+<?php echo $this->_vars['num'];?>);</script></td>
@@ -33,6 +34,9 @@
 			<td><?php echo $value->last_time;?></td>
 			<td><a href="manage.php?action=update&id=<?php echo $value->id;?>">修改</a> | <a href="manage.php?action=delete&id=<?php echo $value->id;?>" onclick="return confirm('你真的要删除这个管理员吗？')?true:false">删除</a></td>
 		</tr>
+		<?php }?>
+			<?php }else{?>
+			<tr><td colspan="7">对不起没有任何数据</td></tr>
 		<?php }?>
 	</table>
 		<div id="page"><?php echo $this->_vars['page'];?></div>

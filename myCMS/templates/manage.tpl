@@ -12,8 +12,8 @@
 		管理首页&gt;&gt;管理员管理&gt;&gt;<strong id="title">{$title}</strong>
 	</div>
 	<ol>
-		<li><a href="manage.php?action=add" class="mes selected">新增管理员</a></li>
-		<li><a href="manage.php?action=show" class="mes" >管理员列表</a></li>
+		<li><a href="manage.php?action=add" class="mes">新增管理员</a></li>
+		<li><a href="manage.php?action=show" class="mes selected" >管理员列表</a></li>
 		{if $update}
 			<li><a href="manage.php?action=update&id={$id}" class="mes" >修改管理员</a></li>
 		{/if}

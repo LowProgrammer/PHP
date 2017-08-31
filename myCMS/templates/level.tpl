@@ -12,8 +12,8 @@
 		管理首页&gt;&gt;等级管理&gt;&gt;<strong id="title">{$title}</strong>
 	</div>
 	<ol>
-		<li><a href="level.php?action=add" class="mes selected">新增等级</a></li>
-		<li><a href="level.php?action=show" class="mes" >等级列表</a></li>
+		<li><a href="level.php?action=add" class="mes ">新增等级</a></li>
+		<li><a href="level.php?action=show" class="mes selected" >等级列表</a></li>
 		{if $update}
 			<li><a href="level.php?action=update&id={$id}" class="mes" >修改等级</a></li>
 		{/if}

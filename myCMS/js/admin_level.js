@@ -6,7 +6,6 @@ $(document).ready(function () {
     var a=$('.mes');
     a.removeClass('selected');
     for (var i = 0; i < a.length; i++) {
-
         if(a.eq(i).text()==title){
             a.eq(i).addClass('selected');
         }

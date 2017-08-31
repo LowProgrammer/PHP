@@ -73,10 +73,11 @@ class LevelAction extends Action
 		}
 		if(isset($_GET['id'])){
 			$this->_model->_id=$_GET['id'];
-			is_object($this->_model->getOneLevel())?true:Tool::alertBack('等级传值的id有误');
-			$this->_tpl->assign('id',$this->_model->getOneLevel()->id);
-			$this->_tpl->assign('level_name',$this->_model->getOneLevel()->level_name);
-			$this->_tpl->assign('level_info',$this->_model->getOneLevel()->level_info);
+			$_level=$this->_model->getOneLevel();
+			is_object($_level)?true:Tool::alertBack('等级传值的id有误');
+			$this->_tpl->assign('id',$_level->id);
+			$this->_tpl->assign('level_name',$_level->level_name);
+			$this->_tpl->assign('level_info',$_level->level_info);
 			$this->_tpl->assign('prev',PREV_URL);
 			$this->_tpl->assign('update',true);
 			$this->_tpl->assign('title',"修改等级");
@@ -93,7 +94,7 @@ class LevelAction extends Action
 			$_manage=new ManageModel();
 			$_manage->_level=$this->_model->_id;
 			if($_manage->getOneManage())Tool::alertBack('此等级已存在用户，无法删除，请先删除用户');
-			$this->_model->deleteLevel()?Tool::alertLocation('恭喜你，等级删除成功','level.php?action=show'):alertBack('很遗憾，等级删除失败');
+			$this->_model->deleteLevel()?Tool::alertLocation('恭喜你，等级删除成功',PREV_URL):alertBack('很遗憾，等级删除失败');
 		}
 		else{
 			Tool::alertBack('非法操作');
