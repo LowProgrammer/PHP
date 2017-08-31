@@ -11,7 +11,7 @@
 
         public function __construct($total,$pagesize)
         {
-            $this->_total=$total;
+            $this->_total=$total?$total:1;
             $this->_pagesize=$pagesize;
             $this->_pagenum=ceil($this->_total/$this->_pagesize);
             $this->_page=$this->setPage();

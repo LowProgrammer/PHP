@@ -23,6 +23,7 @@
 		<tr>
 			<th>编号</th><th>等级名称</th><th>描述</th><th>操作</th>
 		</tr>
+		{if $AllLevel}
 		{foreach $AllLevel(key,value)}
 		<tr>
 			<td><script type="text/javascript">document.write({@key+1}+{$num});</script></td>
@@ -31,6 +32,9 @@
 			<td><a href="level.php?action=update&id={@value->id}">修改</a> | <a href="level.php?action=delete&id={@value->id}" onclick="return confirm('你真的要删除这个等级吗？')?true:false">删除</a></td>
 		</tr>
 		{/foreach}
+			{else}
+				<tr><td colspan="4">对不起没有任何数据</td></tr>
+		{/if}
 	</table>
 
 	<div id="page">{$page}</div>

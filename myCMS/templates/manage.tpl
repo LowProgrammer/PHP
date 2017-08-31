@@ -23,6 +23,7 @@
 		<tr>
 			<th>编号</th><th>用户名</th><th>等级</th><th>登录次数</th><th>最近登录IP</th><th>最近登陆时间</th><th>操作</th>
 		</tr>
+		{if $AllManage}
 		{foreach $AllManage(key,value)}
 		<tr>
 			<td><script type="text/javascript">document.write({@key+1}+{$num});</script></td>
@@ -34,6 +35,9 @@
 			<td><a href="manage.php?action=update&id={@value->id}">修改</a> | <a href="manage.php?action=delete&id={@value->id}" onclick="return confirm('你真的要删除这个管理员吗？')?true:false">删除</a></td>
 		</tr>
 		{/foreach}
+			{else}
+			<tr><td colspan="7">对不起没有任何数据</td></tr>
+		{/if}
 	</table>
 		<div id="page">{$page}</div>
 	<!--<p class="center">[<a href="manage.php?action=add">新增管理员</a>]</p>-->
