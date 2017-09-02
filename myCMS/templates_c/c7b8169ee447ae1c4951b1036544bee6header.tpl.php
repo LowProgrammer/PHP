@@ -11,10 +11,10 @@
 	<!-- 导航栏 -->
 	<div id="nav">
 		<ul>
-			<li><a href="###">首页</a></li>
+			<li><a href="./">首页</a></li>
 			<?php if($this->_vars['frontNav']){ ?>
 				<?php  foreach($this->_vars['frontNav'] as $key =>$value){?>
-					<li><a href="###<?php echo $value->id;?>"><?php echo $value->nav_name;?></a></li>
+					<li><a href="list.php?id=<?php echo $value->id;?>"><?php echo $value->nav_name;?></a></li>
 				<?php }?>
 			<?php }?>
 		</ul>
