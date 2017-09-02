@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>CMS内容管理系统</title>
     <link rel="stylesheet" type="text/css" href="style/index.css">
+	<link rel="stylesheet" type="text/css" href="style/basic.css">
 </head>
 <body>
 	<?php $_tpl->create('header.tpl');?>
