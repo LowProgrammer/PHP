@@ -6,7 +6,7 @@ global $_tpl;
 //入口
 $_level=new LevelAction($_tpl);
 $_level->_action();
-$this->_tpl->display('level.tpl');
+$_tpl->display('level.tpl');
 
 
 
