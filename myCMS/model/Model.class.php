@@ -1,12 +1,20 @@
 <?php 
 	//模型基类
 	class Model{
+	    //执行多条sql语句
+        public  function multi($_sql){
+            $_db=DB::getDB();
+            $_db->multi_query($_sql);
+            DB::unDB($result=null,$_db);
+            return true;
+        }
         //获取下一个增值ID
         public function nextid($_table){
             $_sql="SHOW TABLE STATUS LIKE '$_table'";
             $_object=$this->one($_sql);
             return $_object->Auto_increment;
         }
+
 	    //查找总记录模型
         protected  function total($_sql){
             $_db=DB::getDB();
