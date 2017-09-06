@@ -130,7 +130,7 @@ if( preg_match('/windows/i', @getenv('OS')) )
 }
 
 //系统配置参数
-require_once(DEDEDATA."/config.cache.inc.php");
+require_once(DEDEDATA."/config.common.inc.php");
 
 //Session保存路径
 $enkey = substr(md5(substr($cfg_cookie_encode,0,5)),0,10);

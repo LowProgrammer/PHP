@@ -10,7 +10,7 @@
  */
 require_once (dirname(__FILE__).'/common.inc.php');
 require_once (DEDEDATA.'/safe/inc_safe_config.php');
-require_once (DEDEDATA.'/config.cache.inc.php');
+require_once (DEDEDATA.'/config.common.inc.php');
 $config = array(
     'font_size'   => 14,
     'img_height'  => $safe_wheight,

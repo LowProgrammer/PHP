@@ -140,7 +140,7 @@ if(strlen($cfg_cookie_encode)<=10)
         $hash .= $chars[mt_rand(0, $max)];
     }
 	$dsql->ExecuteNoneQuery("UPDATE `#@__sysconfig` SET `value`='{$hash}' WHERE varname='cfg_cookie_encode' ");
-	$configfile = DEDEDATA.'/config.cache.inc.php';
+	$configfile = DEDEDATA.'/config.common.inc.php';
     if(!is_writeable($configfile))
     {
         echo "配置文件'{$configfile}'不支持写入，无法修改系统配置参数！";

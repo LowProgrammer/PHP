@@ -66,7 +66,7 @@ function TestWrite($d)
 function ReWriteConfigAuto()
 {
     global $dsql;
-    $configfile = DEDEDATA.'/config.cache.inc.php';
+    $configfile = DEDEDATA.'/config.common.inc.php';
     if(!is_writeable($configfile))
     {
         echo "配置文件'{$configfile}'不支持写入，无法修改系统配置参数！";
