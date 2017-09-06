@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../style/admin.css">
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../js/admin_level.js"></script>
+	<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
 </head>
 <body id="main">
 	<div class="map">
@@ -40,7 +41,7 @@
 				<tr><td>文章来源：<input type="text" name="source" class="text"></td></tr>
 				<tr><td>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<input type="text" name="author" class="text"></td></tr>
 				<tr><td><span class="middle">内容摘要：</span><textarea name="info" class=""></textarea></td></tr>
-				<tr><td><textarea style="width: 520px;">详细内容：这里后面会改成在线编辑器</textarea></td></tr>
+				<tr><td><textarea name="content" id="editor" class="ckeditor"></textarea></td></tr>
 				<tr>
 					<td>评论选项：<input type="radio" name="commend" value="1" checked="checked">允许评论
 									<input type="radio" name="commend" value="0">禁止评论
@@ -90,4 +91,7 @@
 
 	{/if}
 </body>
+	<script>
+		CKEDITOR.replace("editor");
+	</script>
 </html>
