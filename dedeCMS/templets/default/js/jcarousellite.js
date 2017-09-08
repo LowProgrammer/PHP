@@ -196,7 +196,7 @@
  * are visible at the time of callback.
  *
  *
- * @cat Plugins/Image Gallery
+ * @cat Plugins/Image.class Gallery
  * @author Ganeshji Marwaha/ganeshread@gmail.com
  */
 

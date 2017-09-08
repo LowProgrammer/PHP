@@ -2805,9 +2805,9 @@ fieldset[disabled] .am-checkbox-inline {
   border-bottom-left-radius: 0 !important;
 }
 /* ==========================================================================
-   Component: Image
+   Component: Image.class
  ============================================================================ */
-/* Image thumbnails */
+/* Image.class thumbnails */
 .am-img-thumbnail {
   display: inline-block;
   padding: 2px;
@@ -6716,7 +6716,7 @@ a.am-close:hover {
   border-color: #0e90d2;
   background-color: #ffffff;
 }
-/* Image caption */
+/* Image.class caption */
 .am-thumbnail-caption {
   margin: 0;
   padding: 0.8rem;
@@ -7287,7 +7287,7 @@ a.am-close:hover {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-/* Text Image Replacement */
+/* Text Image.class Replacement */
 .am-text-ir {
   font: 0/0 a;
   color: transparent;

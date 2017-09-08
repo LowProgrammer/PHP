@@ -291,7 +291,7 @@ class Archives
             $this->Fields['picname'] = $this->Fields['litpic'];
 
             //模板里直接使用{dede:field name='image'/}获取缩略图
-            $this->Fields['image'] = (!preg_match('/jpg|gif|png/i', $this->Fields['picname']) ? '' : "<img src='{$this->Fields['picname']}' />");
+            $this->Fields['Image.class'] = (!preg_match('/jpg|gif|png/i', $this->Fields['picname']) ? '' : "<img src='{$this->Fields['picname']}' />");
         }
         // 处理投票选项
         if (isset($this->Fields['voteid']) && !empty($this->Fields['voteid']))

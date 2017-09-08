@@ -4,7 +4,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
 /**
- * @file Image plugin
+ * @file Image.class plugin
  */
 
 CKEDITOR.plugins.add( 'addon',

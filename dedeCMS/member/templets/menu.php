@@ -44,8 +44,8 @@
         <?php
       	}
         //是否启用图集投稿
-        if($channelInfos['image']['issend']==1 && $cfg_mb_album=='Y'  && $channelInfos['image']['isshow']==1 
-        && ($channelInfos['image']['usertype']=='' || preg_match("#".$cfg_ml->fields['mtype']."#", $channelInfos['image']['usertype'])) )
+        if($channelInfos['Image.class']['issend']==1 && $cfg_mb_album=='Y'  && $channelInfos['Image.class']['isshow']==1
+        && ($channelInfos['Image.class']['usertype']=='' || preg_match("#".$cfg_ml->fields['mtype']."#", $channelInfos['Image.class']['usertype'])) )
         {
         ?>
           
@@ -55,7 +55,7 @@
 	      	}
 	      	//是否启用软件投稿
 	        if($channelInfos['soft']['issend']==1 && $channelInfos['soft']['isshow']==1
-	        && ($channelInfos['image']['usertype']=='' || preg_match("#".$cfg_ml->fields['mtype']."#", $channelInfos['image']['usertype']))
+	        && ($channelInfos['Image.class']['usertype']=='' || preg_match("#".$cfg_ml->fields['mtype']."#", $channelInfos['Image.class']['usertype']))
 	        )
 	        {
 	        ?>

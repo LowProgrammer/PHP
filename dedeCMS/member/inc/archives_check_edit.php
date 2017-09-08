@@ -84,7 +84,7 @@ if (empty($oldlitpic))
 //处理上传的缩略图
 if($litpic != '')
 {
-    $litpic = MemberUploads('litpic', $oldlitpic, $mid, 'image', '', $cfg_ddimg_width, $cfg_ddimg_height, false, $isadmin);
+    $litpic = MemberUploads('litpic', $oldlitpic, $mid, 'Image.class', '', $cfg_ddimg_width, $cfg_ddimg_height, false, $isadmin);
     SaveUploadInfo($title, $litpic, 1);
 }
 else

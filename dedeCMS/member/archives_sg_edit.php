@@ -102,7 +102,7 @@ else if($dopost=='save')
     $mid = $cfg_ml->M_ID;
 
     //处理上传的缩略图
-    $litpic = MemberUploads('litpic', $oldlitpic, $mid, 'image', '', $cfg_ddimg_width, $cfg_ddimg_height, FALSE);
+    $litpic = MemberUploads('litpic', $oldlitpic, $mid, 'Image.class', '', $cfg_ddimg_width, $cfg_ddimg_height, FALSE);
     if($litpic!='') SaveUploadInfo($title, $litpic, 1);
     else $litpic =$oldlitpic;
 

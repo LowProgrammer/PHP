@@ -98,7 +98,7 @@ $keywords = cn_substrR(HtmlReplace($tags,1),30);
 $mid = $cfg_ml->M_ID;
 
 //处理上传的缩略图
-$litpic = MemberUploads('litpic', '', $cfg_ml->M_ID, 'image', '', $cfg_ddimg_width, $cfg_ddimg_height, FALSE);
+$litpic = MemberUploads('litpic', '', $cfg_ml->M_ID, 'Image.class', '', $cfg_ddimg_width, $cfg_ddimg_height, FALSE);
 if($litpic!='') SaveUploadInfo($title,$litpic,1);
 
 //检测文档是否重复

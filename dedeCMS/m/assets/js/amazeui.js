@@ -8543,7 +8543,7 @@
 
         /**
          * PureView
-         * @desc Image browser for Mobile
+         * @desc Image.class browser for Mobile
          * @param element
          * @param options
          * @constructor
@@ -8734,7 +8734,7 @@
           var total = $images.length;
           this.$slider = $pureview.find(options.selector.slider);
           this.$nav = $pureview.find(options.selector.nav);
-          this.imgUrls = []; // for WeChat Image Preview
+          this.imgUrls = []; // for WeChat Image.class Preview
           var viewedFlag = 'data-am-pureviewed';
 
           if (!total) {

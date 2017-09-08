@@ -3,7 +3,7 @@ $toolbar['Basic'] = array(
             array( 'Source','-','Templates'),
             array( 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Print'),
             array( 'Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'),
-            array( 'ShowBlocks'),array('Image','Flash','Addon'),array('Maximize'),'/',
+            array( 'ShowBlocks'),array('Image.class','Flash','Addon'),array('Maximize'),'/',
             array( 'Bold','Italic','Underline','Strike','-'),
             array( 'NumberedList','BulletedList','-','Outdent','Indent','Blockquote'),
             array( 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'),
@@ -16,7 +16,7 @@ $toolbar['Default'] = array(
             array( 'Source','-','Templates'),
             array( 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Print'),
             array( 'Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'),
-            array( 'ShowBlocks'),array('Image','Flash'),array('Maximize'),'/',
+            array( 'ShowBlocks'),array('Image.class','Flash'),array('Maximize'),'/',
             array( 'Bold','Italic','Underline','Strike','-'),
             array( 'NumberedList','BulletedList','-','Outdent','Indent','Blockquote'),
             array( 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'),
@@ -30,7 +30,7 @@ $toolbar['Small'] = array(
             array( 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Print'),
             array( 'Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'),
             array( 'Bold','Italic','Underline','Strike','-'),
-			array( 'Image','Flash'),
+			array('Image.class','Flash'),
             array( 'Table','HorizontalRule'),
             array( 'Link','Unlink','Anchor'),'/',
             array( 'Styles','Format','Font','FontSize'),
@@ -42,7 +42,7 @@ $toolbar['Member'] = array(
             array( 'Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'),
             array( 'Bold','Italic','Underline','Strike','-'),
             array( 'Table','HorizontalRule'),
-            array( 'Link','Unlink','Image','Anchor'),
+            array( 'Link','Unlink', 'Image.class','Anchor'),
             array( 'Styles','Format','Font','FontSize'),
             array( 'TextColor', 'BGColor')
         );
@@ -62,7 +62,7 @@ $toolbar['Diy'] = array(
             array( 'Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'),
             array( 'Bold','Italic','Underline','Strike','-'),
             array( 'Table','HorizontalRule'),
-            array( 'Link','Unlink','Image','Anchor'),
+            array( 'Link','Unlink', 'Image.class','Anchor'),
             array( 'Styles','Format','Font','FontSize'),
             array( 'TextColor', 'BGColor')
         );

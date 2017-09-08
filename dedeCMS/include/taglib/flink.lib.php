@@ -98,7 +98,7 @@ EOT;
     {
         $wsql .= "And typeid = '$typeid'";
     }
-    if($type=='image')
+    if($type== 'Image.class')
     {
         $wsql .= " And logo<>'' ";
     }
@@ -121,7 +121,7 @@ EOT;
         {
             $link = "<a href='".$dbrow->url."' target='_blank'>".cn_substr($dbrow->webname,$titlelen)."</a> ";
         }
-        else if($type=='image')
+        else if($type== 'Image.class')
         {
             $link = "<a href='".$dbrow->url."' target='_blank'><img src='".$dbrow->logo."' width='88' height='31' border='0'></a> ";
         }

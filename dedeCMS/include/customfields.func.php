@@ -289,7 +289,7 @@ function GetFieldValue($dvalue, $dtype, $aid=0, $job='add', $addvar='', $adminty
 		if(preg_match("#[\\|/]uploads[\\|/]userup#", $dvalue)) return $dvalue;
         if($admintype=='diy')
         {
-            $iurl = MemberUploads($fieldname, '', 0, 'image', '', -1, -1, false);
+            $iurl = MemberUploads($fieldname, '', 0, 'Image.class', '', -1, -1, false);
             return $iurl;
         }
         $iurl = stripslashes($dvalue);

@@ -275,14 +275,14 @@ class DedeHtml2
                 }
                 $this->Links[$url]['link']  = $url;
             }
-            $this->Links[$url]['image'] = preg_replace('/img:/', '', $aimg);
-            $this->InsertMedia($this->Links[$url]['image'], 'img');
+            $this->Links[$url]['Image.class'] = preg_replace('/img:/', '', $aimg);
+            $this->InsertMedia($this->Links[$url]['Image.class'], 'img');
         }
         else
         {
             if(!isset($this->Links[$url]))
             {
-                $this->Links[$url]['image'] = '';
+                $this->Links[$url]['Image.class'] = '';
                 $this->Links[$url]['title'] = $atitle;
                 $this->Links[$url]['link']  = $url;
             }

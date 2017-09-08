@@ -75,7 +75,7 @@ function lib_arclist( &$ctag, &$refObj )
     $isweight = $ctag->GetAtt('isweight');
 
     if($tagname=='imglist' || $tagname=='imginfolist') {
-        $listtype = 'image';
+        $listtype = 'Image.class';
     }
     else if($tagname=='specart') {
         $channelid = -1;
@@ -509,8 +509,8 @@ function lib_arclistDone(&$refObj, &$ctag, $typeid=0, $row=10, $col=1, $titlelen
                 $row['picname'] = $row['litpic'];
                 $row['stime'] = GetDateMK($row['pubdate']);
                 $row['typelink'] = "<a href='".$row['typeurl']."'>".$row['typename']."</a>";
-                $row['image'] = "<img src='".$row['picname']."' border='0' width='$imgwidth' height='$imgheight' alt='".preg_replace("#['><]#", "", $row['title'])."'>";
-                $row['imglink'] = "<a href='".$row['filename']."'>".$row['image']."</a>";
+                $row['Image.class'] = "<img src='".$row['picname']."' border='0' width='$imgwidth' height='$imgheight' alt='".preg_replace("#['><]#", "", $row['title'])."'>";
+                $row['imglink'] = "<a href='".$row['filename']."'>".$row['Image.class']."</a>";
                 $row['fulltitle'] = $row['title'];
                 $row['title'] = cn_substr($row['title'], $titlelen);
                 if($row['color']!='') $row['title'] = "<font color='".$row['color']."'>".$row['title']."</font>";

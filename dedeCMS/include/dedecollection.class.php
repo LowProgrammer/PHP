@@ -1032,7 +1032,7 @@ class DedeCollection
                 $lk++;
                 if($mytotal > 0 && $lk >= $mytotal) break;
                 $inquery = "INSERT INTO `#@__co_htmls` (`nid` ,`typeid`, `title` , `litpic` , `url` , `dtime` , `isdown` , `isexport` , `result`)
-                    VALUES ('{$this->noteId}' , '0', '".addslashes($v['title'])."' , '".addslashes($v['image'])."' , '".addslashes($v['link'])."' , 'dtime' , '0' , '0' , ''); ";
+                    VALUES ('{$this->noteId}' , '0', '".addslashes($v['title'])."' , '".addslashes($v['Image.class'])."' , '".addslashes($v['link'])."' , 'dtime' , '0' , '0' , ''); ";
                 $this->dsql->ExecuteNoneQuery($inquery);
 
                 $inquery = "INSERT INTO `#@__co_urls`(hash,nid) VALUES ('".md5($v['link'])."','{$this->noteId}');";
@@ -1114,7 +1114,7 @@ class DedeCollection
                         }
                     }
                     $inquery = "INSERT INTO `#@__co_htmls` (`nid` ,`typeid`, `title` , `litpic` , `url` , `dtime` , `isdown` , `isexport` , `result`)
-                    VALUES ('{$this->noteId}' ,'$typeid', '".addslashes($v['title'])."' , '".addslashes($v['image'])."' , '".addslashes($v['link'])."' , '".time()."' , '0' , '0' , ''); ";
+                    VALUES ('{$this->noteId}' ,'$typeid', '".addslashes($v['title'])."' , '".addslashes($v['Image.class'])."' , '".addslashes($v['link'])."' , '".time()."' , '0' , '0' , ''); ";
                     $this->dsql->ExecuteNoneQuery($inquery);
 
                     $inquery = "INSERT INTO `#@__co_urls`(hash,nid) VALUES ('".md5($v['link'])."','{$this->noteId}');";

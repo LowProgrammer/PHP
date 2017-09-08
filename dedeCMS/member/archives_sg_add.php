@@ -136,7 +136,7 @@ else if($dopost=='save')
     $description=empty($description)? "" : $description;
 
     //处理上传的缩略图
-    $litpic = MemberUploads('litpic','',$cfg_ml->M_ID,'image','',$cfg_ddimg_width,$cfg_ddimg_height,false);
+    $litpic = MemberUploads('litpic','',$cfg_ml->M_ID, 'Image.class','',$cfg_ddimg_width,$cfg_ddimg_height,false);
     if($litpic!='') SaveUploadInfo($title,$litpic,1);
 
     //分析处理附加表数据

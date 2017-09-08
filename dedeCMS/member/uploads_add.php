@@ -23,7 +23,7 @@ else if($dopost=='save')
     $cfg_ml->CheckUserSpace();
     if($mediatype==1)
     {
-        $utype = 'image';
+        $utype = 'Image.class';
     }
     else if($mediatype==2)
     {

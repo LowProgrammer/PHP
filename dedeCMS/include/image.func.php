@@ -46,4 +46,4 @@ if(function_exists("imagecreatefromwbmp") && function_exists("imagewbmp"))
 }
 
 // 引入图像处理小助手
-helper('image');
+helper('Image.class');

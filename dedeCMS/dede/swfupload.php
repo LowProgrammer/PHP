@@ -46,7 +46,7 @@ if(empty($dopost))
     if (!is_array($srcInfo))
     {
         @unlink($Filedata);
-        echo "ERROR: Image info Error! ";
+        echo "ERROR: Image.class info Error! ";
         exit(0);
     }
     else
@@ -74,7 +74,7 @@ if(empty($dopost))
     if($ftype=='')
     {
         @unlink($Filedata);
-        echo "ERROR: Image type Error! ";
+        echo "ERROR: Image.class type Error! ";
         exit(0);
     }
     

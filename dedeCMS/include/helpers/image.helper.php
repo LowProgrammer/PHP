@@ -219,7 +219,7 @@ if ( ! function_exists('WaterImg'))
         $cfg_watermarktext['shadowy'] = '0';
         $cfg_watermarktext['shadowcolor'] = '0,0,0';
         $photo_marktrans = 85;
-        $img = new image($srcFile,0, $cfg_watermarktext, $photo_waterpos, $photo_diaphaneity, $photo_wheight, $photo_wwidth, $photo_marktype, $photo_marktrans,$TRUEMarkimg);
+        $img = new Image($srcFile,0, $cfg_watermarktext, $photo_waterpos, $photo_diaphaneity, $photo_wheight, $photo_wwidth, $photo_marktype, $photo_marktrans,$TRUEMarkimg);
         $img->watermark(0);
     }
 }

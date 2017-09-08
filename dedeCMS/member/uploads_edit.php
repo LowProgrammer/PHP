@@ -33,7 +33,7 @@ if($dopost=='')
 else if($dopost=='save')
 {
     $title = HtmlReplace($title,2);
-    if($mediatype==1) $utype = 'image';
+    if($mediatype==1) $utype = 'Image.class';
     else if($mediatype==2)
     {
         $utype = 'flash';

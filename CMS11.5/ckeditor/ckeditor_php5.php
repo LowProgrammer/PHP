@@ -120,7 +120,7 @@ class CKEditor
 	 * $config = array();
 	 * $config['toolbar'] = array(
 	 *     array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
-	 *     array( 'Image', 'Link', 'Unlink', 'Anchor' )
+	 *     array( 'Image.class', 'Link', 'Unlink', 'Anchor' )
 	 * );
 	 * $events['instanceReady'] = 'function (ev) {
 	 *     alert("Loaded: " + ev.editor.name);

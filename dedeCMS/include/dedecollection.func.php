@@ -371,11 +371,11 @@ function GetRssLinks($rssurl)
         }
         if(isset($descriptions[2][$k]))
         {
-            $rsarr[$k]['image'] = GetddImgFromRss($descriptions[2][$k],$rssurl);
+            $rsarr[$k]['Image.class'] = GetddImgFromRss($descriptions[2][$k],$rssurl);
         }
         else
         {
-            $rsarr[$k]['image'] = '';
+            $rsarr[$k]['Image.class'] = '';
         }
     }
     return $rsarr;

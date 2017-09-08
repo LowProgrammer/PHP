@@ -38,7 +38,7 @@ if($dopost=='save')
             @unlink($cfg_basedir.$oldface);
         }
         //上传新工图片
-        $face = MemberUploads('face', $oldface, $cfg_ml->M_ID, 'image', 'myface', 180, 180);
+        $face = MemberUploads('face', $oldface, $cfg_ml->M_ID, 'Image.class', 'myface', 180, 180);
     }
     else
     {

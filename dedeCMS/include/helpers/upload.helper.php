@@ -23,7 +23,7 @@
  */
 if ( ! function_exists('AdminUpload'))
 {
-    function AdminUpload($uploadname, $ftype='image', $rnddd=0, $watermark=TRUE, $filetype='' )
+    function AdminUpload($uploadname, $ftype= 'Image.class', $rnddd=0, $watermark=TRUE, $filetype='' )
     {
         global $dsql, $cuserLogin, $cfg_addon_savetype, $cfg_dir_purview;
         global $cfg_basedir, $cfg_image_dir, $cfg_soft_dir, $cfg_other_medias;
@@ -44,7 +44,7 @@ if ( ! function_exists('AdminUpload'))
         $file_snames = explode('.', $file_name);
         $file_sname = strtolower(trim($file_snames[count($file_snames)-1]));
         
-        if($ftype=='image' || $ftype=='imagelit')
+        if($ftype== 'Image.class' || $ftype=='imagelit')
         {
             $filetype = '1';
             $sparr = Array('image/pjpeg', 'image/jpeg', 'image/gif', 'image/png', 'image/xpng', 'image/wbmp');
@@ -93,7 +93,7 @@ if ( ! function_exists('AdminUpload'))
         $fileurl = $filedir.'/'.$filename.'.'.$file_sname;
         $rs = move_uploaded_file($file_tmp, $cfg_basedir.$fileurl);
         if(!$rs) return -2;
-        if($ftype=='image' && $watermark)
+        if($ftype== 'Image.class' && $watermark)
         {
             WaterImg($cfg_basedir.$fileurl, 'up');
         }
@@ -115,7 +115,7 @@ if ( ! function_exists('AdminUpload'))
 //$handname 允许用户手工指定网址情况下的网址
 if ( ! function_exists('MemberUploads'))
 {
-    function MemberUploads($upname,$handname,$userid=0,$utype='image',$exname='',$maxwidth=0,$maxheight=0,$water=false,$isadmin=false)
+    function MemberUploads($upname, $handname, $userid=0, $utype= 'Image.class', $exname='', $maxwidth=0, $maxheight=0, $water=false, $isadmin=false)
     {
         global $cfg_imgtype,$cfg_mb_addontype,$cfg_mediatype,$cfg_user_dir,$cfg_basedir,$cfg_dir_purview;
         
@@ -134,7 +134,7 @@ if ( ! function_exists('MemberUploads'))
 
             $GLOBALS[$upname.'_name'] = trim(preg_replace("#[ \r\n\t\*\%\\\/\?><\|\":]{1,}#",'',$GLOBALS[$upname.'_name']));
             //源文件类型检查
-            if($utype=='image')
+            if($utype== 'Image.class')
             {
                 if(!preg_match("/\.(".$cfg_imgtype.")$/", $GLOBALS[$upname.'_name']))
                 {
@@ -198,7 +198,7 @@ if ( ! function_exists('MemberUploads'))
             }
             
             //加水印或缩小图片
-            if($utype=='image')
+            if($utype== 'Image.class')
             {
                 include_once(DEDEINC.'/image.func.php');
                 if($maxwidth>0 || $maxheight>0)

@@ -121,7 +121,7 @@ else if($dopost=='save')
                 {
                     continue;
                 }
-                $filename = MemberUploads('imgfile'.$i,'',$cfg_ml->M_ID,'image','',0,0,false);
+                $filename = MemberUploads('imgfile'.$i,'',$cfg_ml->M_ID, 'Image.class','',0,0,false);
                 if($filename!='')
                 {
                     SaveUploadInfo($title,$filename,1);

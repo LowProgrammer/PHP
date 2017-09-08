@@ -213,7 +213,7 @@ else if($dopost=="testrss")
             foreach($arr as $ar)
             {
                 $msg .= "<hr size='1' />\r\n";
-                $msg .= "link: {$ar['link']}<br />title: {$ar['title']}<br />image: {$ar['image']}\r\n";
+                $msg .= "link: {$ar['link']}<br />title: {$ar['title']}<br />image: {$ar['Image.class']}\r\n";
                 $i++;
             }
         }

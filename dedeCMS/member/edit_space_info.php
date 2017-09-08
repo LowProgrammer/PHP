@@ -38,7 +38,7 @@ if($dopost=='save')
             @unlink($cfg_basedir.$oldspacelogo);
         }
         //上传新工图片
-        $spacelogo = MemberUploads('spacelogo','',$cfg_ml->M_ID,'image','mylogo', 200, 50);
+        $spacelogo = MemberUploads('spacelogo','',$cfg_ml->M_ID, 'Image.class','mylogo', 200, 50);
     } else {
         $spacelogo = $oldspacelogo;
     }
