@@ -11,6 +11,8 @@
     define('PREV_URL',isset($_SERVER["HTTP_REFERER"])?$_SERVER["HTTP_REFERER"]:'');//上一页地址
     define('NAV_SIZE',10);//主导航在前台显示的个数
     define('UPDIR','/uploads/');//上传文件目录
+    define('MARK',ROOT_PATH.'/images/yc.png');
+
 
 	//模板配置信息
 	define('TPL_DIR', ROOT_PATH.'/templates/');//模板目录
