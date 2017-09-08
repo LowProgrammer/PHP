@@ -5,7 +5,7 @@
     <title>main</title>
     <link rel="stylesheet" type="text/css" href="../style/admin.css">
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../js/admin_level.js"></script>
+    <script type="text/javascript" src="../js/admin_content.js"></script>
 	<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
 </head>
 <body id="main">
@@ -24,7 +24,7 @@
 	<?php }?>
 	<!--新增页面  -->
 	<?php if($this->_vars['add']){ ?>
-		<form>
+		<form name="content">
 			<table cellspacing="0" class="content">
 				<tr><th><strong>发布一条新文档</strong></th></tr>
 				<tr><td>文档标题：<input type="text" name="title" class="text"></td></tr>
@@ -37,11 +37,16 @@
 					</td>
 				</tr>
 				<tr><td>关&nbsp;&nbsp;键&nbsp;&nbsp;字：<input type="text" name="keyword" class="text"></td></tr>
-				<tr><td>缩&nbsp;&nbsp;略&nbsp;&nbsp;图：<input type="text" name="thumbnail" class="text"></td></tr>
+				<tr>
+					<td>缩&nbsp;&nbsp;略&nbsp;&nbsp;图：<input type="text" name="thumbnail" class="text" readonly="readonly">
+						<input type="button" value="上传缩略图" onclick="centerWindow('../templates/upfile.html','upfile','600','400')"/>
+						<img name="pic" id="pic" style="display: none;">
+					</td>
+				</tr>
 				<tr><td>文章来源：<input type="text" name="source" class="text"></td></tr>
 				<tr><td>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<input type="text" name="author" class="text"></td></tr>
 				<tr><td><span class="middle">内容摘要：</span><textarea name="info" class=""></textarea></td></tr>
-				<tr><td><textarea style="width: 520px;" id="editor"></textarea></td></tr>
+				<tr><td><textarea name="content" id="editor" class="ckeditor"></textarea></td></tr>
 				<tr>
 					<td>评论选项：<input type="radio" name="commend" value="1" checked="checked">允许评论
 									<input type="radio" name="commend" value="0">禁止评论

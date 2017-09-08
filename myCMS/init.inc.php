@@ -8,6 +8,8 @@
 	
 	//引入模板信息
 	require ROOT_PATH.'/config/profile.inc.php';
+	//设置时区
+    date_default_timezone_set('Asia/Shanghai');
 	// //引入模板类
 	// require ROOT_PATH.'/includes/Templates.class.php';
 	// //引入数据库
