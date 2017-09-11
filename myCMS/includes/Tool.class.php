@@ -58,7 +58,27 @@ class Tool{
 	        session_destroy();
         }
     }
-
+    //字符串截取函数
+    static public function subStr($_object,$_field,$_length,$_encoding){
+        if($_object) {
+            foreach ($_object as $_value) {
+                if (mb_strlen($_value->$_field, $_encoding) > $_length) {
+                    $_value->$_field = mb_substr($_value->$_field, 0, $_length, $_encoding).'...';
+                }
+            }
+        }
+        return $_object;
+    }
+    //讲对象数组转换为字符串，并且去掉最后的都好
+    static public function objArrOfStr($_object,$_field){
+        if($_object){
+            $_html='';
+            foreach ($_object as $_value){
+                $_html.=$_value->$_field.',';
+            }
+            return substr($_html,0,strlen($_html)-1);
+        }
+    }
 }
 
 ?>

@@ -1,5 +1,6 @@
 <?php  
 	class ContentModel extends Model{
+	    private $_id;
         private $_title;
         private $_nav;
         private $_attr;
@@ -14,6 +15,7 @@
         private $_commend;
         private $_count;
         private $_color;
+        private $_limit;
 
 		//拦截器
 		public function __set($_key,$_value){
@@ -31,6 +33,22 @@
                     '$this->_gold','$this->_commend','$this->_count','$this->_color',
                     NOW())";
             return parent::aud($_sql);
+        }
+        //获取文档列表
+        public function getListContent(){
+            $_sql="SELECT c.id,c.title,c.date,c.info,c.thumbnail,c.count,n.nav_name FROM cms_content c,cms_nav n WHERE c.nav=n.id AND c.nav IN($this->_nav) $this->_limit";
+            return parent::all($_sql);
+        }
+        //获取主类下子类id
+        public function getNavChildId(){
+            $_sql="SELECT id FROM cms_nav WHERE pid='$this->_id'";
+            return parent::all($_sql);
+        }
+        //获取内容总记录
+        public function  getListContentTotal(){
+
+            $_sql="SELECT COUNT(*)  FROM cms_content c,cms_nav n WHERE c.nav=n.id AND c.nav IN($this->_nav)";
+            return parent::total($_sql);
         }
 	}
 ?>

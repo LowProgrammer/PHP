@@ -10,6 +10,7 @@
 	define('PAGE_SIZE',10);//每页
     define('PREV_URL',isset($_SERVER["HTTP_REFERER"])?$_SERVER["HTTP_REFERER"]:'');//上一页地址
     define('NAV_SIZE',10);//主导航在前台显示的个数
+    define('ARTICLE_SIZE',8);//前台内容显示条数
     define('UPDIR','/uploads/');//上传文件目录
     define('MARK',ROOT_PATH.'/images/yc.png');
 

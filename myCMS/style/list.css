@@ -26,6 +26,10 @@
     height: 100px;
     float: left;
 }
+#list dl dt img{
+    display: block;
+    border: 1px solid #ccc;
+}
 #list dl dd{
     width: 530px;
     float: left;
