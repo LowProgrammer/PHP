@@ -14,8 +14,8 @@
         {if $AllListContent}
                 {foreach $AllListContent(key,value))}
                     <dl>
-                        <dt><img src="{@value->thumbnail}" alt=""/></dt>
-                        <dd>[<strong>{@value->nav_name}</strong>]<a href="###">{@value->title}</a></dd>
+                        <dt><a href="details.php?id={@value->id}" target="_blank"><img src="{@value->thumbnail}" alt=""/></a></dt>
+                        <dd>[<strong>{@value->nav_name}</strong>]<a href="details.php?id={@value->id}" target="_blank">{@value->title}</a></dd>
                         <dd>日期：{@value->date} 点击率：{@value->count} 好评：0</dd>
                         <dd>{@value->info}</dd>
                     </dl>

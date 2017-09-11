@@ -79,6 +79,10 @@ class Tool{
             return substr($_html,0,strlen($_html)-1);
         }
     }
+    //将HTML字符串传换成html标签
+    static public function unHtml($_str){
+        return htmlspecialchars_decode($_str);
+    }
 }
 
 ?>
