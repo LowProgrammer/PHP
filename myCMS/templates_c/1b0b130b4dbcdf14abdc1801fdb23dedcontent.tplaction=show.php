@@ -24,12 +24,12 @@
 	<?php }?>
 	<!--新增页面  -->
 	<?php if($this->_vars['add']){ ?>
-		<form name="content">
+		<form name="content" method="post" action="?action=add">
 			<table cellspacing="0" class="content">
 				<tr><th><strong>发布一条新文档</strong></th></tr>
 				<tr><td>文档标题：<input type="text" name="title" class="text"></td></tr>
 				<tr><td>标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签：<input type="text" name="title" class="text"></td></tr>
-				<tr><td>栏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目：<select name="nav"><option>请选择一个栏目类别</option></select></td></tr>
+				<tr><td>栏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目：<select name="nav"><option>请选择一个栏目类别</option><?php echo $this->_vars['nav'];?></select></td></tr>
 				<tr><td>定义属性：<input type="checkbox" name="top" value="头条"/>头条
 						<input type="checkbox" name="rec" value="推荐"/>推荐
 						<input type="checkbox" name="bold" value="加粗"/>加粗
@@ -80,7 +80,7 @@
 						</select>
 					</td>
 				</tr>
-				<tr><td><input type="submit" value="发布文档"><input type="reset" value="重置"></td></tr>
+				<tr><td><input type="submit" name="send" value="发布文档"><input type="reset" value="重置"></td></tr>
 				<tr><td></td></tr>
 			</table>
 		</form>

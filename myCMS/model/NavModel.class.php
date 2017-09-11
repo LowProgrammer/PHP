@@ -67,6 +67,18 @@
 					";
             return parent::all($_sql);
         }
+        //查询子导航不带limit
+        public function getAllFontNav(){
+            //sql语句
+            $_sql="SELECT 
+						id,
+						nav_name,
+						nav_info,
+						sort
+					FROM 
+						cms_nav WHERE pid='$this->_id' ORDER BY sort ASC ";
+            return parent::all($_sql);
+        }
         //查询所有子导航
         public function getAllChildNav(){
             //sql语句

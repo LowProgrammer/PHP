@@ -4,6 +4,11 @@
 		static public function checkNull($_date){
 			return trim($_date)==''? true:false;
 		}
+		//数据是否位数字
+		static public function checkNum($_date){
+		    if (is_numeric($_date)) return true;
+		    return false;
+        }
 		//长度是否合法
 		static public function checkLength($_date,$_length,$_falg){
 		    if($_falg=='min'){
