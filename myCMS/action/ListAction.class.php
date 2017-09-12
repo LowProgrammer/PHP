@@ -17,12 +17,14 @@ class ListAction extends Action
     private function getListContent(){
 	    if(isset($_GET['id'])){
             parent::__construct($this->_tpl,new ContentModel());
-            $this->_model->_id=$_GET['id'];
-            $_navid=$this->_model->getNavChildId();
+            $_nav=new NavModel();
+
+            $_nav->_id=$_GET['id'];
+            $_navid=$_nav->getNavChildId();
             if($_navid){
                 $this->_model->_nav=Tool::objArrOfStr($_navid,'id');
             }else{
-                $this->_model->_nav=$this->_model->_id;
+                $this->_model->_nav=$_nav->_id;
             }
             parent::page($this->_model->getListContentTotal(),ARTICLE_SIZE);
 

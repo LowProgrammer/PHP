@@ -35,8 +35,26 @@ class ContentAction extends Action
 			
 	}
 	private function show(){
-
         $this->_tpl->assign('show',true);
+        $this->_tpl->assign('title',"文档列表");
+        $this->nav();
+        $_nav = new NavModel();
+        if(empty($_GET['nav'])) {
+
+            $_id = $_nav->getAllNavChildId();
+            $this->_model->_nav = Tool::objArrOfStr($_id, 'id');
+        }else{
+            $_nav->_id=$_GET['nav'];
+            if(!$_nav->getOneNav()) Tool::alertBack('类别参数传输错误');
+            $this->_model->_nav=$_GET['nav'];
+        }
+        parent::page($this->_model->getListContentTotal());
+
+        $_object=$this->_model->getListContent();
+        $_object=Tool::subStr($_object,'title',20,'utf-8');
+
+
+        $this->_tpl->assign('SearchContent',$_object);
 	}
 
 	private function add(){
@@ -76,6 +94,18 @@ class ContentAction extends Action
         //$this->_tpl->assign('prev',PREV_URL);
         $this->_tpl->assign('add',true);
         $this->_tpl->assign('title',"新增文档");
+        $this->nav();
+        $this->_tpl->assign('author',$_SESSION['admin']['admin_user']);
+	}
+	private function update(){
+
+	}
+	public function deleteLevel(){
+
+	}
+
+	//nav
+    private function nav(){
         $_nav=new NavModel();
         $_html='';
         foreach ($_nav->getAllFontNav() as $_object){
@@ -89,14 +119,7 @@ class ContentAction extends Action
             $_html.='</optgroup>';
         }
         $this->_tpl->assign('nav',$_html);
-        $this->_tpl->assign('author',$_SESSION['admin']['admin_user']);
-	}
-	private function update(){
-
-	}
-	public function deleteLevel(){
-
-	}
+    }
 }
 
 ?>

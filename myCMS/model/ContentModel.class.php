@@ -36,7 +36,7 @@
         }
         //获取文档列表
         public function getListContent(){
-            $_sql="SELECT c.id,c.title,c.date,c.info,c.thumbnail,c.count,n.nav_name FROM cms_content c,cms_nav n WHERE c.nav=n.id AND c.nav 
+            $_sql="SELECT c.id,c.attr,c.title,c.title t,c.nav,c.date,c.info,c.thumbnail,c.count,n.nav_name FROM cms_content c,cms_nav n WHERE c.nav=n.id AND c.nav 
                   ORDER BY date DESC 
                   IN($this->_nav) $this->_limit";
             return parent::all($_sql);
@@ -46,11 +46,7 @@
             $_sql="SELECT id,title,nav,content,info,date,count,author,source FROM cms_content WHERE id='$this->_id'";
             return parent::one($_sql);
         }
-        //获取主类下子类id
-        public function getNavChildId(){
-            $_sql="SELECT id FROM cms_nav WHERE pid='$this->_id'";
-            return parent::all($_sql);
-        }
+
         //获取内容总记录
         public function  getListContentTotal(){
 

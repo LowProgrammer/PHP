@@ -175,5 +175,16 @@
 				";
             return parent::aud($_sql);
         }
+
+        //获取主类下子类id
+        public function getNavChildId(){
+            $_sql="SELECT id FROM cms_nav WHERE pid='$this->_id'";
+            return parent::all($_sql);
+        }
+        //获取所有肥猪类的id
+        public function getAllNavChildId(){
+            $_sql="SELECT id FROM cms_nav WHERE pid<>0";
+            return parent::all($_sql);
+        }
 	}
 ?>
